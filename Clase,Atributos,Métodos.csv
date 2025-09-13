@@ -1,0 +1,7 @@
+Clase,Atributos,Métodos
+Equipo,"id_equipo, nombre, estado, especificaciones","registrar(), actualizarEstado()"
+Estudiante,"id_estudiante, nombre, historial, estado_morosidad","solicitarPrestamo(), consultarHistorial()"
+Prestamo,"id_prestamo, fecha_inicio, fecha_fin, estado","aprobar(), rechazar(), registrarDevolucion()"
+Administrador,"id_admin, nombre, cargo","gestionarEquipos(), aprobarPrestamos(), bloquearUsuario()"
+Notificacion,"id_notificacion, mensaje, fecha_envio","enviar(), generarRecordatorio()"
+
