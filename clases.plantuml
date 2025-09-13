@@ -1,0 +1,28 @@
+@startuml CasosUsoPlataforma
+
+actor "Estudiante" as est
+actor "Administrador" as admin
+actor "Sistema" as sis
+
+rectangle "Plataforma de Préstamos" {
+    usecase "Registrar equipos" as UC1
+    usecase "Solicitar préstamo en línea" as UC2
+    usecase "Notificación de aprobación/rechazo" as UC3
+    usecase "Devolución y multas" as UC4
+    usecase "Bloqueo a usuarios morosos" as UC5
+}
+
+est --> UC2
+est --> UC4
+
+admin --> UC1
+admin --> UC2
+admin --> UC3
+admin --> UC4
+admin --> UC5
+
+sis --> UC3
+sis --> UC4
+sis --> UC5
+
+@enduml

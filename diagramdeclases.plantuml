@@ -1,0 +1,54 @@
+@startuml DiagramaClasesPlataforma
+
+class Equipo {
+    - id_equipo : int
+    - nombre : string
+    - estado : string
+    - especificaciones : string
+    + registrar() : void
+    + actualizarEstado() : void
+}
+
+class Estudiante {
+    - id_estudiante : int
+    - nombre : string
+    - historial : string
+    - estado_morosidad : boolean
+    + solicitarPrestamo() : void
+    + consultarHistorial() : void
+}
+
+class Prestamo {
+    - id_prestamo : int
+    - fecha_inicio : Date
+    - fecha_fin : Date
+    - estado : string
+    + aprobar() : void
+    + rechazar() : void
+    + registrarDevolucion() : void
+}
+
+class Administrador {
+    - id_admin : int
+    - nombre : string
+    - cargo : string
+    + gestionarEquipos() : void
+    + aprobarPrestamos() : void
+    + bloquearUsuario() : void
+}
+
+class Notificacion {
+    - id_notificacion : int
+    - mensaje : string
+    - fecha_envio : Date
+    + enviar() : void
+    + generarRecordatorio() : void
+}
+
+' Relaciones
+Estudiante "1" --> "*" Prestamo
+Prestamo "*" --> "1" Equipo
+Administrador --> Prestamo
+Prestamo --> Notificacion
+
+@enduml
